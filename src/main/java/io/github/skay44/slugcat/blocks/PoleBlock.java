@@ -128,7 +128,9 @@ public class PoleBlock extends Block implements Waterloggable, FallbackLoot {
         world.setBlockState(pos,state.with(axis,true));
         world.playSound(null,pos,soundGroup.getPlaceSound(), SoundCategory.BLOCKS,0.7f+player.getRandom().nextFloat()*0.3f,0.85f+player.getRandom().nextFloat()*0.3f);
 
-        stack.decrement(1);
+        if (!player.isCreative()) {
+            stack.decrement(1);
+        }
 
         return ActionResult.SUCCESS;
     }

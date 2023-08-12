@@ -9,13 +9,17 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 
 public class ModSounds {
+
     public static final SoundEvent REBAR_STEP = registerSound("rebar_step");
-    public static final BlockSoundGroup REBAR = new BlockSoundGroup(1f,1f,
+	public static final SoundEvent POP = registerSound("pop");
+
+    public static final BlockSoundGroup REBAR = new BlockSoundGroup(1f, 1f,
             SoundEvents.BLOCK_STONE_BREAK,
             REBAR_STEP,
             SoundEvents.BLOCK_STONE_PLACE,
             SoundEvents.BLOCK_STONE_HIT,
-            SoundEvents.BLOCK_STONE_FALL);
+            SoundEvents.BLOCK_STONE_FALL
+	);
 
     private static SoundEvent registerSound(String id){
         Identifier identifier = RainWorldMod.getId(id);
@@ -25,6 +29,6 @@ public class ModSounds {
     }
 
     public static void initializeSounds(){
-
+		// :tiny_potato:
     }
 }

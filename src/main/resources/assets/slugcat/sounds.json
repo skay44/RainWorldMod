@@ -1,8 +1,16 @@
 {
-  "rebar_step": {
-    "subtitle": "sound.slugcat.rebar_step",
-    "sounds": [
-      "slugcat:rebar_step"
-    ]
-  }
+	"rebar_step": {
+		"subtitle": "sound.slugcat.rebar_step",
+		"sounds": [
+			"slugcat:rebar_step"
+		]
+	},
+	"pop": {
+		"subtitle": "sound.slugcat.pop",
+		"sounds": [
+			"slugcat:pop_1",
+			"slugcat:pop_2",
+			"slugcat:pop_3"
+		]
+	}
 }

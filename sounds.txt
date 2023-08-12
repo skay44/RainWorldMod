@@ -1,0 +1,6 @@
+sounds used:
+
+slugcat:pop
+    CC BY 4.0: pop_1 https://freesound.org/people/InspectorJ/sounds/411639/
+    CC0: pop_2 https://freesound.org/people/MATRIXXX_/sounds/506546/
+    CC0: pop_3 https://freesound.org/people/MATRIXXX_/sounds/506545/
