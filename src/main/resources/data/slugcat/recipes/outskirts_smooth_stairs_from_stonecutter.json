@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "slugcat:outskirts_smooth_block"
+  },
+  "result": "slugcat:outskirts_smooth_stairs",
+  "count": 1
+}

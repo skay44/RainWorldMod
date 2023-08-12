@@ -1,0 +1,8 @@
+{
+  "rebar_step": {
+    "subtitle": "sound.slugcat.rebar_step",
+    "sounds": [
+      "slugcat:rebar_step"
+    ]
+  }
+}

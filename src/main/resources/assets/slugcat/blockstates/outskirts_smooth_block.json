@@ -1,0 +1,7 @@
+{
+  "variants":{
+    "": {
+      "model": "slugcat:block/outskirts_smooth_block"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom":"slugcat:block/outskirts_tiles",
+    "side": "slugcat:block/outskirts_tiles",
+    "top": "slugcat:block/outskirts_tiles"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "o  ",
+    "oo ",
+    "ooo"
+  ],
+  "key": {
+    "o": {
+      "item": "slugcat:outskirts_tiles"
+    }
+  },
+  "result": {
+    "item": "slugcat:outskirts_tiles_stairs",
+    "count": 4
+  }
+}

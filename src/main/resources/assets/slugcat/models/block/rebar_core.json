@@ -1,0 +1,23 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"0": "slugcat:block/rebar",
+		"particle": "slugcat:block/rebar"
+	},
+	"elements": [
+		{
+			"from": [7, 7, 7],
+			"to": [9, 9, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 7, 2, 9], "texture": "#0"},
+				"east": {"uv": [2, 7, 4, 9], "texture": "#0"},
+				"south": {"uv": [4, 7, 6, 9], "texture": "#0"},
+				"west": {"uv": [6, 7, 8, 9], "texture": "#0"},
+				"up": {"uv": [10, 2, 8, 0], "texture": "#0"},
+				"down": {"uv": [10, 2, 8, 4], "texture": "#0"}
+			}
+		}
+	]
+}

@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "slugcat:rebar",
+    "slugcat:outskirts_block",
+    "slugcat:outskirts_stairs",
+    "slugcat:cracked_outskirts_block",
+    "slugcat:cracked_outskirts_stairs",
+    "slugcat:outskirts_tiles",
+    "slugcat:outskirts_tiles_stairs",
+    "slugcat:outskirts_smooth_block",
+    "slugcat:outskirts_smooth_stairs",
+  ]
+}

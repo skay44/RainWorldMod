@@ -1,0 +1,33 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "slugcat:block/rebar_core"
+      }
+    },
+    {
+      "apply": {
+        "model": "slugcat:block/rebar_x"
+      },
+      "when": {
+        "axis_x": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "slugcat:block/rebar_y"
+      },
+      "when": {
+        "axis_y": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "slugcat:block/rebar_z"
+      },
+      "when": {
+        "axis_z": "true"
+      }
+    }
+  ]
+}

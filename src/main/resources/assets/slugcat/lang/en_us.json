@@ -1,0 +1,17 @@
+{
+  "block.slugcat.outskirts_block": "Outskirts Block",
+  "block.slugcat.outskirts_stairs": "Outskirts Stairs",
+  "block.slugcat.cracked_outskirts_block": "Cracked Outskirts Block",
+  "block.slugcat.cracked_outskirts_stairs": "Cracked Outskirts Stairs",
+  "block.slugcat.outskirts_tiles": "Outskirts Tiles",
+  "block.slugcat.outskirts_tiles_stairs": "Outskirts Tiled Stairs",
+  "block.slugcat.outskirts_smooth_block": "Outskirts Smooth Block",
+  "block.slugcat.outskirts_smooth_stairs": "Outskirts Smooth Stairs",
+
+  "block.slugcat.rebar": "Rebar",
+
+  "item.slugcat.blue_fruit": "Blue Fruit",
+
+
+  "sound.slugcat.rebar_step": "Footsteps"
+}
