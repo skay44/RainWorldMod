@@ -3,11 +3,10 @@ package io.github.skay44.slugcat.blocks;
 import io.github.skay44.slugcat.items.ModItems;
 import io.github.skay44.slugcat.utilities.FallbackLoot;
 import io.github.skay44.slugcat.utilities.Voxels;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.ShapeContext;
-import net.minecraft.block.Waterloggable;
+import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.loot.LootTable;
@@ -27,37 +26,30 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class PoleBlock extends Block implements Waterloggable, FallbackLoot {
 
-    //collisions
     public static final BooleanProperty AXIS_X = BooleanProperty.of("axis_x");
     public static final BooleanProperty AXIS_Y = BooleanProperty.of("axis_y");
     public static final BooleanProperty AXIS_Z = BooleanProperty.of("axis_z");
+    public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
     public PoleBlock(Settings settings) {
         super(settings);
-        setDefaultState(getDefaultState().with(AXIS_X,false).with(AXIS_Y,false).with(AXIS_Z,false));
+        setDefaultState(getDefaultState().with(AXIS_X,false).with(AXIS_Y,false).with(AXIS_Z,false).with(WATERLOGGED, false));
 
     }
 
-    //X
     private static final VoxelShape VOXEL_SHAPE_X = Voxels.box(0,7,7,16,9,9);
-    //Y
     private static final VoxelShape VOXEL_SHAPE_Y = Voxels.box(7,0,7,9,16,9);
-    //Z
     private static final VoxelShape VOXEL_SHAPE_Z = Voxels.box(7,7,0,9,9,16);
+
     //Always on
     private static final VoxelShape VOXEL_SHAPE_CORE = Voxels.box(7,7,7,9,9,9);
-
-//    //T E M P O R A R Y
-//    @Override
-//    public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-//        return VoxelShapes.empty();
-//    }
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
@@ -85,20 +77,9 @@ public class PoleBlock extends Block implements Waterloggable, FallbackLoot {
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         BlockState state = super.getPlacementState(ctx);
         Direction.Axis axis = ctx.getPlacementDirections()[0].getAxis();
-        return state.with(axisToProperty(axis),true);
-    }
+        FluidState fluid = ctx.getWorld().getFluidState(ctx.getBlockPos());
 
-
-    private Direction getFacing(PlayerEntity player){
-        if(player.getPitch() > 45f){
-            return Direction.UP;
-        }
-        else if(player.getPitch() < -45f){
-            return Direction.DOWN;
-        }
-        else{
-            return player.getHorizontalFacing();
-        }
+        return state.with(axisToProperty(axis), true).with(WATERLOGGED, fluid.getFluid() == Fluids.WATER);
     }
 
     private BooleanProperty axisToProperty(Direction.Axis axis){
@@ -107,6 +88,24 @@ public class PoleBlock extends Block implements Waterloggable, FallbackLoot {
             case Y -> AXIS_Y;
             case Z -> AXIS_Z;
         };
+    }
+
+    @Override
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+        if (state.get(WATERLOGGED)) {
+            world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+        }
+
+        return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
+    }
+
+    @Override
+    public FluidState getFluidState(BlockState state) {
+        if (state.get(WATERLOGGED)) {
+            return Fluids.WATER.getStill(false);
+        }
+
+        return super.getFluidState(state);
     }
 
     @Override
@@ -137,7 +136,7 @@ public class PoleBlock extends Block implements Waterloggable, FallbackLoot {
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(AXIS_X, AXIS_Y, AXIS_Z, Properties.WATERLOGGED);
+        builder.add(AXIS_X, AXIS_Y, AXIS_Z, WATERLOGGED);
     }
 
     @Override

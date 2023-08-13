@@ -21,13 +21,13 @@ public class ModItems {
     private static final List<ItemStack> edible = new ArrayList<>();
     private static final List<ItemStack> items = new ArrayList<>();
 
-    private static void registerItem(Item item, String id, @Nullable List<ItemStack> sections) {
+    private static void registerItem(Item item, String id, @Nullable List<ItemStack> section) {
         Registry.register(Registries.ITEM, RainWorldMod.getId(id), item);
         ItemStack stack = new ItemStack(item);
         items.add(stack);
 
-        if (sections != null) {
-            sections.add(stack);
+        if (section != null) {
+            section.add(stack);
         }
     }
 
