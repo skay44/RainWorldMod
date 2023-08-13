@@ -11,8 +11,8 @@
   "block.slugcat.rebar": "Rebar",
 
   "item.slugcat.blue_fruit": "Blue Fruit",
-  "item.slugcat.bubble_seed_dry": "Bubble Seed Dry",
-  "item.slugcat.bubble_seed_swollen": "Bubble Seed Swollen",
+  "item.slugcat.bubble_seed_dry": "Dry Bubble Seed",
+  "item.slugcat.bubble_seed_swollen": "Popped Bubble Seed",
 
   "sound.slugcat.rebar_step": "Footsteps",
   "sound.slugcat.pop": "Bubble Seed Pops",
