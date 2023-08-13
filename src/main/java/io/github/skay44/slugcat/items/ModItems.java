@@ -40,7 +40,7 @@ public class ModItems {
     public static final Item OUTSKIRTS_SMOOTH_BLOCK = new BlockItem(ModBlocks.OUTSKIRTS_SMOOTH_BLOCK, new Item.Settings());
     public static final Item OUTSKIRTS_SMOOTH_STAIRS = new BlockItem(ModBlocks.OUTSKIRTS_SMOOTH_STAIRS, new Item.Settings());
 
-    public static final BlockItem REBAR = new BlockItem(ModBlocks.REBAR, new Item.Settings());
+    public static final Item REBAR = new PoleItem(ModBlocks.REBAR, new Item.Settings());
 
     public static final Item BLUE_FRUIT = new Item(new Item.Settings().food(ModFoods.BLUE_FRUIT));
     public static final Item BUBBLE_SEED_DRY = new Item(new Item.Settings());
