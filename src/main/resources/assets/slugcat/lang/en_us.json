@@ -11,7 +11,11 @@
   "block.slugcat.rebar": "Rebar",
 
   "item.slugcat.blue_fruit": "Blue Fruit",
+  "item.slugcat.bubble_seed_dry": "Bubble Seed Dry",
+  "item.slugcat.bubble_seed_swollen": "Bubble Seed Swollen",
 
+  "sound.slugcat.rebar_step": "Footsteps",
+  "sound.slugcat.pop": "Bubble Seed Pops",
 
-  "sound.slugcat.rebar_step": "Footsteps"
+  "itemGroup.slugcat.main_group": "Rain World"
 }
