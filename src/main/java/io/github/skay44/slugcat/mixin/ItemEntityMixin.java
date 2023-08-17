@@ -19,7 +19,7 @@ public class ItemEntityMixin {
 	@Unique
 	private void applyVelocityBoost(ItemEntity entity, float velocity, float multiplier) {
 		Vec3d vec3d = entity.getVelocity();
-		entity.setVelocity(vec3d.x * multiplier, vec3d.y + velocity, vec3d.z * multiplier);
+		entity.setVelocity(vec3d.x * multiplier, velocity, vec3d.z * multiplier);
 	}
 
 	@Inject(method = "applyWaterBuoyancy", at = @At("HEAD"))
@@ -34,7 +34,7 @@ public class ItemEntityMixin {
 
 			entity.getWorld().playSound(null, entity.getBlockPos(), ModSounds.POP, SoundCategory.NEUTRAL, volume, pitch);
 			entity.setStack(new ItemStack(ModItems.BUBBLE_SEED_SWOLLEN, stack.getCount()));
-			applyVelocityBoost(entity, 0.56f, 1.2f);
+			applyVelocityBoost(entity, 0.25f, 1.2f);
 		}
 	}
 

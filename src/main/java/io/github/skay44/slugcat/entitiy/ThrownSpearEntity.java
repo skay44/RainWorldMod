@@ -1,5 +1,7 @@
 package io.github.skay44.slugcat.entitiy;
 
+import net.minecraft.client.render.entity.EntityRenderer;
+import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityStatuses;
 import net.minecraft.entity.EntityType;
@@ -7,11 +9,12 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.mob.BlazeEntity;
 import net.minecraft.entity.projectile.thrown.ThrownEntity;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 
-public class ThrownSpearEntity extends ThrownEntity {
+public class ThrownSpearEntity extends ThrownEntity{
 //    protected ThrownSpearEntity(EntityType<? extends ThrownEntity> entityType, World world) {
 //        super(entityType, world);
 //    }
@@ -39,6 +42,11 @@ public class ThrownSpearEntity extends ThrownEntity {
             this.getWorld().sendEntityStatus(this, EntityStatuses.PLAY_DEATH_SOUND_OR_ADD_PROJECTILE_HIT_PARTICLES);
             this.discard();
         }
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
     }
 
     @Override
